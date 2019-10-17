@@ -1,0 +1,23 @@
+.b-social {
+  margin: 0 auto;
+  padding: 0;
+  display: inline-flex;
+  list-style: none;
+
+  li {
+    margin: 0 8px;
+    padding: 0;
+  }
+
+  a:hover {
+    svg {
+      fill: #ffffff;
+    }
+  }
+
+  svg {
+    fill: rgba(#ffffff, .3);
+    width: 24px;
+    transition: fill ease-out $animation-duration;
+  }
+}
