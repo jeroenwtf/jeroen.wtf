@@ -13,6 +13,11 @@ $color-muted: #888888;
 
 $gradient-1: linear-gradient(45deg, $color-purple, $color-orange);
 $gradient-2: linear-gradient(45deg, $color-blue, $color-green);
+$gradient-3: linear-gradient(45deg, $color-purple, $color-red);
+
+$screen-sm: 450px;
+$screen-md: 764px;
+$screen-lg: 1100px;
 
 $animation-duration: 200ms;
 
@@ -36,16 +41,30 @@ body {
 .container {
   max-width: $container-width;
   margin: 0 auto;
+  padding: 0 24px;
+
+  @media (min-width: $screen-sm) {
+    padding: 0 32px;
+  }
 }
 
 .b-header {
-  max-width: $container-width;
-  margin: 0 auto;
-  padding: 32px 0 24px;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+    max-width: $container-width;
+    padding: 32px 0 24px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .b-header__title {
@@ -54,6 +73,7 @@ body {
 }
 
 .b-header__contact-me {
+  display: none;
   background: linear-gradient(45deg, $color-purple, $color-red);
   color: #ffffff;
   text-decoration: none;
@@ -64,10 +84,19 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
+
+  @media (min-width: $screen-md) {
+    display: inline-block;
+
+  }
 }
 
 .b-header__social {
-  margin-left: 24px;
+  margin: 8px 0 0;
+
+  @media (min-width: $screen-md) {
+    margin: 0 0 0 24px;
+  }
 }
 
 .b-hero {
@@ -77,37 +106,66 @@ body {
   position: relative;
 
   @include background-cover('../../static/hero_bg.jpg', #120a33);
+
+  background-position: 55% center;
+
+  @media (min-width: $screen-sm) {
+    background-position: center center;
+  }
 }
 
 .b-hero__tag {
   display: flex;
   align-items: center;
-  height: 600px;
+  height: 100vh;
+
+  @media (min-width: $screen-sm) {
+    height: 600px;
+  }
 }
 
 .b-hero__title {
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
-  font-size: 38px;
-  max-width: 500px;
+  font-size: 27px;
+  max-width: 70%;
   line-height: 1.4;
   color: #d4cbe8;
 
   strong {
     position: relative;
     color: #ffffff;
+    white-space: nowrap;
 
     &::before {
       content: '';
       background: rgba($color-purple, .5);
       background: linear-gradient(45deg, $color-purple, $color-orange);
-      height: 4px;
+      height: 2px;
       left: 0;
       right: 0;
       bottom: 0;
       position: absolute;
       border-radius: 2px;
     }
+  }
+
+  @media (min-width: $screen-sm) {
+    font-size: 30px;
+    max-width: 300px;
+
+    &::before {
+      height: 4px;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    font-size: 40px;
+    max-width: 400px;
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: 500px;
   }
 }
 
@@ -120,17 +178,30 @@ body {
   padding: 4px 8px;
   border-radius: 5px;
   top: 14px;
+  display: none;
 }
 
 .b-hero__wave {
-  position: absolute;
-  bottom: 0;
-  height: 100px;
-  // Here change to less height on mobile
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    height: 60px;
+    position: absolute;
+    display: block;
+    bottom: 0;
+  }
+
+  @media (min-width: $screen-md) {
+    height: 100px;
+  }
 }
 
 .b-meaning {
-  padding: 32px 0 72px;
+  padding: 40px 0 48px;
+
+  @media (min-width: $screen-sm) {
+    padding: 32px 0 72px;
+  }
 }
 
 .b-meaning__blockquote {
@@ -139,12 +210,20 @@ body {
 }
 
 .b-meaning__text {
-  font-size: 28px;
+  font-size: 21px;
   font-weight: 600;
   text-align: center;
   max-width: 740px;
   line-height: 1.4;
   margin: 0 auto;
+
+  @media (min-width: $screen-sm) {
+    font-size: 24px;
+  }
+
+  @media (min-width: $screen-md) {
+    font-size: 28px;
+  }
 }
 
 .b-meaning__author {
@@ -167,9 +246,17 @@ body {
   background-image: $gradient-2;
 }
 
+.h-gradient--3 {
+  background-image: $gradient-3;
+}
+
 .b-skills {
   background: #f8f8f8;
-  padding: 56px 0 72px;
+  padding: 40px 0;
+
+  @media (min-width: $screen-sm) {
+    padding: 56px 0 72px;
+  }
 }
 
 .b-skills__title {
@@ -190,7 +277,9 @@ body {
 }
 
 .b-skills__list {
-  display: flex;
+  @media (min-width: $screen-lg) {
+    display: flex;
+  }
 }
 
 .b-skill {
@@ -198,20 +287,30 @@ body {
   box-shadow: 0 0 24px 0 rgba(#000000, .03);
   border-radius: 10px;
   padding: 40px 32px;
-  margin: 0 16px;
+  margin: 0 auto 24px;
   max-width: 300px;
-  width: 100%;
+
+  @media (min-width: $screen-md) {
+    max-width: 70%;
+  }
+
+  @media (min-width: $screen-lg) {
+    margin: 0 16px;
+    width: 100%;
+  }
 }
 
 .b-skill__icon {
   max-width: 48px;
   fill: $color-muted;
   margin: 0 0 16px;
+  display: block;
 }
 
 .b-skill__title {
   font-size: 23px;
   margin: 0 0 8px;
+  display: inline-block;
 }
 
 .b-skill__text {
@@ -226,7 +325,11 @@ body {
 }
 
 .b-about-me {
-  padding: 56px 0 72px;
+  padding: 40px 0 48px;
+
+  @media (min-width: $screen-sm) {
+    padding: 56px 0 72px;
+  }
 }
 
 .b-about-me__title {
@@ -242,10 +345,14 @@ body {
 
 .b-contact {
   background: linear-gradient(45deg, $color-purple, $color-red);
-  padding: 140px 0 72px;
   text-align: center;
   color: #ffffff;
   position: relative;
+  padding: 88px 0 48px;
+
+  @media (min-width: $screen-sm) {
+    padding: 140px 0 72px;
+  }
 }
 
 .b-contact__wave {
@@ -253,6 +360,15 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  height: 50px;
+
+  @media (min-width: $screen-sm) {
+    height: 70px;
+  }
+
+  @media (min-width: $screen-md) {
+    height: 100px;
+  }
 }
 
 .b-contact__title {
@@ -284,9 +400,13 @@ body {
 
 .b-footer {
   background: #222222;
-  padding: 56px 0 64px;
   text-align: center;
   color: #ffffff;
+  padding: 40px 0 48px;
+
+  @media (min-width: $screen-sm) {
+    padding: 56px 0 64px;
+  }
 }
 
 .b-footer__name {
