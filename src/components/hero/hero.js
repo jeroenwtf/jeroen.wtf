@@ -4,11 +4,6 @@ import Header from "../header/header"
 
 import WaveHero from "../../../static/hero_wave.svg"
 
-import IconLinkedIn from "../../../static/social/linkedin.svg"
-import IconGithub from "../../../static/social/github.svg"
-import IconTwitter from "../../../static/social/twitter.svg"
-import IconInstagram from "../../../static/social/instagram.svg"
-
 
 export default () => (
   <div className="b-hero">
