@@ -1,10 +1,10 @@
 import React from "react"
 
-import Skill from "./skill.js"
+import Skill from "../skill/skill.js"
 
-import IconCode from "../../static/code.svg"
-import IconDesignSystem from "../../static/design-system.svg"
-import IconEmail from "../../static/email.svg"
+import IconCode from "../../../static/code.svg"
+import IconDesignSystem from "../../../static/design-system.svg"
+import IconEmail from "../../../static/email.svg"
 
 
 export default () => (

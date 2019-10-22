@@ -1,0 +1,96 @@
+.b-hero {
+  background-color: #120a33;
+  color: #ffffff;
+  font-size: 0;
+  position: relative;
+
+  @include background-cover('../../static/hero_bg.jpg', #120a33);
+
+  background-position: 55% center;
+
+  @media (min-width: $screen-sm) {
+    background-position: center center;
+  }
+}
+
+.b-hero__tag {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+
+  @media (min-width: $screen-sm) {
+    height: 600px;
+  }
+}
+
+.b-hero__title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 27px;
+  max-width: 70%;
+  line-height: 1.4;
+  color: #d4cbe8;
+
+  strong {
+    position: relative;
+    color: #ffffff;
+    white-space: nowrap;
+
+    &::before {
+      content: '';
+      background: rgba($color-purple, .5);
+      background: linear-gradient(45deg, $color-purple, $color-orange);
+      height: 2px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      border-radius: 2px;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    font-size: 30px;
+    max-width: 300px;
+
+    &::before {
+      height: 4px;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    font-size: 40px;
+    max-width: 400px;
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: 500px;
+  }
+}
+
+.b-hero__a-what {
+  display: inline-block;
+  position: absolute;
+  right: -95px;
+  font-size: 14px;
+  background: rgba($color-purple, .5);
+  padding: 4px 8px;
+  border-radius: 5px;
+  top: 14px;
+  display: none;
+}
+
+.b-hero__wave {
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    height: 60px;
+    position: absolute;
+    display: block;
+    bottom: 0;
+  }
+
+  @media (min-width: $screen-md) {
+    height: 100px;
+  }
+}

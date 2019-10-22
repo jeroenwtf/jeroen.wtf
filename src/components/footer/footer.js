@@ -1,11 +1,11 @@
 import React from "react";
 
-import Social from "./social";
+import Social from "../social/social";
 
-import IconLinkedIn from "../../static/social/linkedin.svg"
-import IconGithub from "../../static/social/github.svg"
-import IconTwitter from "../../static/social/twitter.svg"
-import IconInstagram from "../../static/social/instagram.svg"
+import IconLinkedIn from "../../../static/social/linkedin.svg"
+import IconGithub from "../../../static/social/github.svg"
+import IconTwitter from "../../../static/social/twitter.svg"
+import IconInstagram from "../../../static/social/instagram.svg"
 
 
 export default () => (

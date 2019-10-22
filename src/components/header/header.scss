@@ -1,0 +1,50 @@
+.b-header {
+  display: none;
+
+  @media (min-width: $screen-sm) {
+    display: block;
+    max-width: $container-width;
+    padding: 32px 0 24px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.b-header__title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.b-header__contact-me {
+  display: none;
+  background: linear-gradient(45deg, $color-purple, $color-red);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 15px 8px 16px;
+  margin-left: 24px;
+  border-radius: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+
+  @media (min-width: $screen-md) {
+    display: inline-block;
+
+  }
+}
+
+.b-header__social {
+  margin: 8px 0 0;
+
+  @media (min-width: $screen-md) {
+    margin: 0 0 0 24px;
+  }
+}

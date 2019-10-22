@@ -1,0 +1,18 @@
+.b-about-me {
+  padding: 40px 0 48px;
+
+  @media (min-width: $screen-sm) {
+    padding: 56px 0 72px;
+  }
+}
+
+.b-about-me__title {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.b-about-me__subtitle {
+  color: $color-muted;
+  margin: 0 0 24px;
+  font-weight: 500;
+}

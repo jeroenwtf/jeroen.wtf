@@ -1,0 +1,20 @@
+$container-width: 1100px;
+
+$color-purple: #ac0eac;
+$color-red: #eb2a33;
+$color-orange: #ff9d02;
+
+$color-blue: #008aff;
+$color-green: #00d88e;
+
+$color-muted: #888888;
+
+$gradient-1: linear-gradient(45deg, $color-purple, $color-orange);
+$gradient-2: linear-gradient(45deg, $color-blue, $color-green);
+$gradient-3: linear-gradient(45deg, $color-purple, $color-red);
+
+$screen-sm: 450px;
+$screen-md: 764px;
+$screen-lg: 1100px;
+
+$animation-duration: 200ms;
