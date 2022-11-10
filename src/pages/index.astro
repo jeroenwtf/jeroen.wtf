@@ -1,21 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-
-import linkedinSvg from '../../public/social/linkedin.svg';
-import githubSvg from '../../public/social/github.svg';
-import twitterSvg from '../../public/social/twitter.svg';
-import mastodonSvg from '../../public/social/mastodon.svg';
-import instagramSvg from '../../public/social/instagram.svg';
 
 const textGradientClass = 'font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-300 to-rose-600';
 
 const socialLinks = [
-  { text: 'LinkedIn', url: 'https://www.linkedin.com/in/jeroenwtf/', icon: linkedinSvg },
-  { text: 'GitHub', url: 'https://github.com/jeroenwtf', icon: githubSvg },
-  { text: 'Twitter', url: 'https://twitter.com/jeroen_wtf', icon: twitterSvg },
-  { text: 'Mastodon', url: 'https://m.stratonauts.co/@jeroen', icon: mastodonSvg },
-  { text: 'Instagram', url: 'https://instagram.com/jeroenwtf', icon: instagramSvg },
+  { text: 'LinkedIn', url: 'https://www.linkedin.com/in/jeroenwtf/', icon: '/social/linkedin.svg' },
+  { text: 'GitHub', url: 'https://github.com/jeroenwtf', icon: '/social/github.svg' },
+  { text: 'Twitter', url: 'https://twitter.com/jeroen_wtf', icon: '/social/twitter.svg' },
+  { text: 'Mastodon', url: 'https://m.stratonauts.co/@jeroen', icon: '/social/mastodon.svg' },
+  { text: 'Instagram', url: 'https://instagram.com/jeroenwtf', icon: '/social/instagram.svg' },
 ]
 ---
 <style>
@@ -44,10 +37,10 @@ const socialLinks = [
             href={link.url}
             class="bg-gradient-to-br from-gray-200 text-gray-700 to-gray-100 flex items-center gap-2 text-sm block px-3 py-2 rounded"
             target="_blank"
-            rel="noopener noreferrer"
+            rel={`${link.text == 'Mastodon' ? 'me ' : ''}noopener noreferrer`}
             aria-label={`Visit my ${link.text} account`}
           >
-            <img class="w-4" src={link.icon} />
+            <img class="w-4" alt={`${link.text}'s icon`} src={link.icon} />
             <span>{link.text}</span>
           </a>
         </li>
@@ -73,7 +66,7 @@ const socialLinks = [
     */}
 
     <div class="mt-10">
-      <h2 class="text-xl font-bold mb-2">Get in touch</h2>
+      <h2 class="text-xl font-bold">Get in touch</h2>
       <p>If you have any questions, just drop me a line in any social media or just...</p>
       <p class="mt-4"><a class="inline-block bg-gradient-to-br from-orange-300 to-rose-600 text-white text-sm uppercase font-bold px-5 py-3 tracking-widest rounded" href="mailto:hola@jeroen.wtf">Send me an email</a></p>
     </div>
