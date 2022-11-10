@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+import linkedinSvg from '../../public/social/linkedin.svg';
+import githubSvg from '../../public/social/github.svg';
+import twitterSvg from '../../public/social/twitter.svg';
+import mastodonSvg from '../../public/social/mastodon.svg';
+import instagramSvg from '../../public/social/instagram.svg';
+
+const textGradientClass = 'font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-300 to-rose-600';
+
+const socialLinks = [
+  { text: 'LinkedIn', url: 'https://www.linkedin.com/in/jeroenwtf/', icon: linkedinSvg },
+  { text: 'GitHub', url: 'https://github.com/jeroenwtf', icon: githubSvg },
+  { text: 'Twitter', url: 'https://twitter.com/jeroen_wtf', icon: twitterSvg },
+  { text: 'Mastodon', url: 'https://m.stratonauts.co/@jeroen', icon: mastodonSvg },
+  { text: 'Instagram', url: 'https://instagram.com/jeroenwtf', icon: instagramSvg },
+]
+---
+<style>
+  .pizza { animation:action 2s infinite ease-in-out }
+
+  @keyframes action {
+   0% {
+    transform:translateY(0)
+   }
+   50% {
+    transform:translateY(-12px)
+   }
+  }
+</style>
+
+<Layout title="Jeroen van Meerendonk - UX Engineer">
+  <div class="container px-6 md:px-10 lg:px-16 py-10 md:py-12 lg:py-16 min-h-screen flex flex-col justify-center">
+    <img src="https://beta.jeroen.wtf/pizza.png" class="w-20 pizza mb-4" alt="A glourious flying pizza slice" title="Pizza yay">
+    <p class="text-3xl sm:text-4xl lg:text-5xl lg:leading-[1.15] mb-10">Hello there! <br class="hidden lg:inline-block">My name is <strong class={textGradientClass}>Jeroen</strong> and <br class="hidden md:inline-block">I'm a <strong class={textGradientClass}>UX Engineer</strong>.</p>
+
+    <p class="mb-5">And I was bored of my old website. I'm working on a new one. Meanwhile...</p>
+    <ul class="flex gap-3 flex-wrap">
+      {socialLinks.map(link => (
+        <li>
+          <a
+            href={link.url}
+            class="bg-gradient-to-br from-gray-200 text-gray-700 to-gray-100 flex items-center gap-2 text-sm block px-3 py-2 rounded"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Visit my ${link.text} account`}
+          >
+            <img class="w-4" src={link.icon} />
+            <span>{link.text}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    {/*
+    <blockquote cite="https://dev.to/emmawedekind/ux-engineering-3hem">
+      <p>A UX Engineer is a Front-End Engineer who sits on a cross-functional design team and helps facilitate collaboration between design and engineering.</p>
+      <footer>— Emma Wedekind, What Is A UX Engineer?</footer>
+    </blockquote>
+
+    <div>
+      <h2>About me</h2>
+      <h3>What can I do for you</h3>
+
+      <p>I started as a freelance doing both design and code, yet the last years I focused my career in the latest. That gave me a special point of view and understanding of how a concept or idea should be implemented from its inception to the final delivery to the end user.</p>
+      <p>What's the right approach. Which are the right tools. How you can make the best out of a project in terms of development so you don't end up with an unmaintainable nightmare in the future. A solid foundation with a proper Design System will help your day to day workflow, reducing time and effort, and assuring a cohesive and visually strong brand and look and feel.</p>
+      <p>And to achieve that I'm comfortable working with different stakeholders, from Design and Content teams to the Engineering ones, speaking their languages and finding the right solutions, and since I'm a frontend developer I can write the code myself. No more crazy requirements that ultimately can't be delivered. Less surprises equals less frustration and better products.</p>
+
+      <h3>Things I do when I'm not coding</h3>
+      <p>I enjoy life off screen, doing photography (you can check my Instagram), playing music or hiking and climbing.</p>
+    </div>
+    */}
+
+    <div class="mt-10">
+      <h2 class="text-xl font-bold mb-2">Get in touch</h2>
+      <p>If you have any questions, just drop me a line in any social media or just...</p>
+      <p class="mt-4"><a class="inline-block bg-gradient-to-br from-orange-300 to-rose-600 text-white text-sm uppercase font-bold px-5 py-3 tracking-widest rounded" href="mailto:hola@jeroen.wtf">Send me an email</a></p>
+    </div>
+
+    <footer class="mt-12">
+      <p class="italic">Sincerely,<br>Jeroen van Meerendonk</p>
+    </footer>
+  </div>
+</Layout>
