@@ -1,0 +1,50 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<div class="absolute right-5 top-5">
+  <label class="opacity-40 hover:opacity-90 transition-opacity p-2 cursor-pointer block js-toggle" for="checkbox">
+    <input type="checkbox" class="hidden" id="checkbox" />
+    <div class="w-5 h-5 flex">
+      <Icon name="sun" class="w-5 h-5 js-sun hidden dark:inline-block" />
+      <Icon name="moon" class="w-5 h-5 js-moon dark:hidden" />
+    </div>
+  </label>
+</div>
+
+<script>
+  const themeToggle = document.querySelector('.js-toggle input[type="checkbox"]');
+
+  const currentTheme = localStorage.getItem("theme");
+
+  if (currentTheme) {
+    setThemeClass(currentTheme);
+
+    if (currentTheme === "dark") {
+      themeToggle.checked = true;
+    }
+  }
+
+  function setThemeClass(theme) {
+    const toggle = document.querySelector('.js-toggle');
+    toggle.setAttribute('title', `Switch to ${theme == 'dark' ? 'light' : 'dark'} mode`);
+
+    if (theme == 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+
+  function switchTheme(e) {
+    if (e.target.checked) {
+      setThemeClass('dark');
+      localStorage.setItem("theme", "dark");
+    } else {
+      setThemeClass('light');
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  themeToggle.addEventListener("change", switchTheme, false);
+</script>
