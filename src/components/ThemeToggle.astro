@@ -2,15 +2,13 @@
 import { Icon } from 'astro-icon';
 ---
 
-<div class="absolute right-5 top-5">
-  <label class="opacity-40 hover:opacity-90 transition-opacity p-2 cursor-pointer block js-toggle" for="checkbox">
-    <input type="checkbox" class="hidden" id="checkbox" />
-    <div class="w-5 h-5 flex">
-      <Icon name="sun" class="w-5 h-5 js-sun hidden dark:inline-block" />
-      <Icon name="moon" class="w-5 h-5 js-moon dark:hidden" />
-    </div>
-  </label>
-</div>
+<label class="opacity-40 hover:opacity-90 transition-opacity p-2 cursor-pointer block js-toggle" for="checkbox">
+  <input type="checkbox" class="hidden" id="checkbox" />
+  <div class="w-5 h-5 flex">
+    <Icon name="sun" class="w-5 h-5 js-sun hidden dark:inline-block" />
+    <Icon name="moon" class="w-5 h-5 js-moon dark:hidden" />
+  </div>
+</label>
 
 <script>
   const themeToggle = document.querySelector('.js-toggle input[type="checkbox"]');
