@@ -13,6 +13,6 @@ import image from "@astrojs/image";
 export default defineConfig({
   site: 'https://jeroen.wtf',
   integrations: [react(), tailwind(), image({
-    logLevel: 'debug',
+    cacheDir: "./.cache/image"
   })]
 });
