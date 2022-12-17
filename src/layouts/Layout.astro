@@ -1,8 +1,6 @@
 ---
 import { Seo } from "astro-seo-meta"
-import '@fontsource/quicksand';
-import '@fontsource/quicksand/500.css';
-import '@fontsource/quicksand/700.css';
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer"
 
 export interface Props {
 	title: string;
@@ -19,6 +17,7 @@ const { title } = Astro.props;
       description="UX Engineer and frontend developer focused on Design Systems with HTML, CSS and JavaScript."
       icon="/favicon.ico"
     />
+    <GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
   </head>
