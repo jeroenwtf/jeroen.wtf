@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import { Icon } from 'astro-icon';
+import { Img } from "astro-imagetools/components";
 
 const textGradientClass = 'font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-300 to-rose-600 dark:from-green-400 dark:to-cyan-600';
 
@@ -31,7 +32,18 @@ const socialLinks = [
     <div class="flex justify-end mb-12">
       <ThemeToggle />
     </div>
-    <img src="https://beta.jeroen.wtf/pizza.png" class="w-20 pizza mb-4 aspect-square" alt="A glourious flying pizza slice" title="Pizza yay">
+    <div class="w-20 pizza mb-4 aspect-square">
+      <Img 
+        src="/pizza.png"
+        alt="A glourious flying pizza slice"
+        placeholder="none"
+        attributes={{
+          img: {
+            title: 'Pizza yay',
+          },
+        }}
+      />
+    </div>
 
     <p class="text-3xl sm:text-4xl lg:text-5xl dark:text-gray-100 lg:leading-[1.15] mb-10">Hello there! <br class="hidden lg:inline-block">My name is <strong class={textGradientClass}>Jeroen</strong> and <br class="hidden md:inline-block">I'm a <strong class={textGradientClass}>UX Engineer</strong>.</p>
 
@@ -57,7 +69,7 @@ const socialLinks = [
 
       <blockquote class="text-lg leading-normal" cite="https://dev.to/emmawedekind/ux-engineering-3hem">
         <p>A UX Engineer is a Front-End Engineer who sits on a cross-functional design team and helps facilitate collaboration between design and engineering.</p>
-        <footer class="text-sm text-gray-500 mt-2">— Emma Bostian, <a target="_blank" href="https://dev.to/emmabostian/ux-engineering-3hem">What Is A UX Engineer?</a></footer>
+        <footer class="text-sm text-gray-500 mt-2">&mdash; Emma Bostian, <a target="_blank" href="https://dev.to/emmabostian/ux-engineering-3hem">What Is A UX Engineer?</a></footer>
       </blockquote>
 
       <p>I started as a freelance designer and developer, but in recent years I've focused on frontend development. This has given me a special perspective on how to approach a project and visually implement it effectively.</p>
@@ -72,8 +84,36 @@ const socialLinks = [
         <ul class="flex flex-wrap gap-x-6 md:gap-x-8 gap-y-3 sm:gap-y-4 mt-4">
           {['domestika', 'netbynet', 'cdmon', 'qustodio', 'mortensen', 'elsaperetti', 'mcdonalds', 'tapngo', 'cyneek'].map(place => (
             <li class="h-8 sm:h-12 relative opacity-80 hover:opacity-100 transition-opacity">
-              <img class="h-8 sm:h-12 object-contain dark:opacity-0" src={`logos/light/${place}.png`} alt="" />
-              <img class="h-8 sm:h-12 object-contain opacity-0 dark:opacity-100 absolute inset-0" src={`logos/dark/${place}.png`} alt="" />
+              <div class="h-8 dark:opacity-0">
+                <Img 
+                  src={`/logos/light/${place}.png`}
+                  alt={place}
+                  placeholder="none"
+                  height={96}
+                  width="auto"
+                  attributes={{
+                    img: {
+                      class: "!h-8 sm:!h-12",
+                      style: 'width: auto',
+                    }
+                  }}
+                />
+              </div>
+              <div class="h-8 opacity-0 dark:opacity-100 absolute inset-0">
+                <Img 
+                  src={`/logos/dark/${place}.png`}
+                  alt={place}
+                  placeholder="none"
+                  height={96}
+                  width="auto"
+                  attributes={{
+                    img: {
+                      class: "!h-8 sm:!h-12",
+                      style: 'width: auto',
+                    }
+                  }}
+                />
+              </div>
             </li>
           ))}
         </ul>
