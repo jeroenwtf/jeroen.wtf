@@ -14,5 +14,5 @@ export default defineConfig({
   site: 'https://jeroen.wtf',
   integrations: [react(), tailwind(), image({
     cacheDir: "./.cache/image"
-  })]
+  })],
 });

@@ -1,0 +1,44 @@
+---
+import igdb from 'igdb-api-node';
+import { Image } from '@astrojs/image/components';
+
+const gameIds = '71,538,107315'
+
+const options = {
+  method: 'POST',
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+  body: new URLSearchParams({
+    client_id: import.meta.env.TWITCH_CLIENT_ID,
+    client_secret: import.meta.env.TWITCH_CLIENT_SECRET,
+    grant_type: 'client_credentials'
+  })
+};
+
+const accessToken = await fetch('https://id.twitch.tv/oauth2/token', options).then(response => response.json())
+
+const client = igdb(import.meta.env.TWITCH_CLIENT_ID, accessToken.access_token);
+
+const games = await client
+  .fields('name,cover.image_id')
+  .where(`id = (${gameIds})`)
+  .request('/games')
+---
+<style>
+  img {
+    @apply rounded h-28 w-auto max-w-none;
+  }
+</style>
+
+<h4>Playing</h4>
+<div class="flex gap-4 not-prose">
+  {games.data.map(game => (
+    <Image
+      aspectRatio={0.75}
+      width={400}
+      format="jpeg"
+      src={`//images.igdb.com/igdb/image/upload/t_cover_big/${game.cover.image_id}.jpg`}
+      alt={game.name}
+      title={game.name}
+    />
+  ))}
+</div>

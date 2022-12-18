@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import Reading from '../components/Reading.astro';
+import Playing from '../components/Playing.astro';
+import Map from '../components/Map.astro';
 import { Icon } from 'astro-icon';
 import { Image } from '@astrojs/image/components';
 
@@ -111,12 +114,25 @@ const socialLinks = [
 
       <h2 class="dark:text-gray-100">Get in touch</h2>
       <p>If you have any questions, just drop me a line in any social media or just...</p>
-    </div>
 
-    <div class="mt-4">
-      <a class="inline-block bg-gradient-to-br from-orange-300 to-rose-600 dark:from-green-400 dark:to-cyan-600 text-white text-sm uppercase font-bold px-5 py-3 tracking-widest rounded" href="mailto:hola@jeroen.wtf">Send me an email</a>
-    </div>
+      <div class="mt-4 not-prose">
+        <a class="inline-block bg-gradient-to-br from-orange-300 to-rose-600 dark:from-green-400 dark:to-cyan-600 text-white text-sm uppercase font-bold px-5 py-3 tracking-widest rounded" href="mailto:hola@jeroen.wtf">Send me an email</a>
+      </div>
 
+      <h2 class="dark:text-gray-100">Random</h2>
+      <p>Some unnecessary information just to make me look more human.</p>
+
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 mb-10">
+        <div class="w-1/2">
+          <Reading />
+        </div>
+        <div class="w-1/2">
+          <Playing />
+        </div>
+      </div>
+
+      <Map />
+    </div>
     <footer class="mt-12">
       <p class="italic">Sincerely,<br>Jeroen van Meerendonk</p>
     </footer>

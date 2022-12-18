@@ -1,0 +1,25 @@
+---
+import { Image } from '@astrojs/image/components';
+
+const books = [
+  { title: 'The Lost World', isbn: '978-0679419464', cover: '' },
+  { title: 'Jurassic Park', isbn: '978-1784752224', cover: '' },
+  { title: 'The Hobbit', isbn: '978-0547928227', cover: '' },
+]
+
+books[0].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[0].isbn}`).then(response => response.json()).then(data => data.url)
+books[1].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[1].isbn}`).then(response => response.json()).then(data => data.url)
+books[2].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[2].isbn}`).then(response => response.json()).then(data => data.url)
+---
+<style>
+  img {
+    @apply rounded h-28 w-auto max-w-none;
+  }
+</style>
+
+<h4>Reading</h4>
+<div class="flex gap-4 not-prose">
+  {books.map(book => (
+    <Image aspectRatio={2/3} width={400} format="jpeg" src={`${book.cover}`} alt={book.title} title={book.title} />
+  ))}
+</div>
