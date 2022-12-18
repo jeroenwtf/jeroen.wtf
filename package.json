@@ -20,7 +20,6 @@
     "astro-google-fonts-optimizer": "^0.2.2",
     "astro-icon": "^0.8.0",
     "astro-seo-meta": "^1.2.1",
-    "igdb-api-node": "^5.0.2",
     "tailwindcss": "^3.2.3"
   },
   "devDependencies": {

@@ -1,5 +1,4 @@
 ---
-import igdb from 'igdb-api-node';
 import { Image } from '@astrojs/image/components';
 
 const gameIds = '71,538,107315'
@@ -16,12 +15,16 @@ const options = {
 
 const accessToken = await fetch('https://id.twitch.tv/oauth2/token', options).then(response => response.json())
 
-const client = igdb(import.meta.env.TWITCH_CLIENT_ID, accessToken.access_token);
-
-const games = await client
-  .fields('name,cover.image_id')
-  .where(`id = (${gameIds})`)
-  .request('/games')
+const games = await fetch("https://api.igdb.com/v4/games", {
+  method: "post",
+  headers: {
+    'Content-Type': 'application/json',
+    'Client-ID': import.meta.env.TWITCH_CLIENT_ID,
+    'Authorization': `Bearer ${accessToken.access_token}`,
+  },
+  body: `fields name,cover.image_id; where id = (${gameIds});`,
+})
+  .then(response => response.json());
 ---
 <style>
   img {
@@ -31,7 +34,7 @@ const games = await client
 
 <h4>Playing</h4>
 <div class="flex gap-4 not-prose">
-  {games.data.map(game => (
+  {games.map(game => (
     <Image
       aspectRatio={0.75}
       width={400}
