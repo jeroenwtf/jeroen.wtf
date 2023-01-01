@@ -117,9 +117,9 @@ export default function Home({ books, games }) {
         </div>
         <footer className="mt-12">
           <p className="italic">Sincerely,<br />Jeroen van Meerendonk</p>
-          {process.env.NEXT_PUBLIC_PACKAGE_VERSION && process.env.NEXT_PUBLIC_LAST_UPDATED_AT &&
+          {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA &&
             <div className="border-t border-zinc-200 dark:border-zinc-700 mt-10 pt-4 text-xs text-zinc-400 dark:text-zinc-600">
-              <p>Version: {process.env.NEXT_PUBLIC_PACKAGE_VERSION || "-"} &mdash; Last updated at: {process.env.NEXT_PUBLIC_LAST_UPDATED_AT || "-"}</p>
+              <p>Version: {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}</p>
             </div>
           }
         </footer>
