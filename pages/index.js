@@ -35,11 +35,12 @@ export default function Home({ books, games }) {
         </div>
         <div className="w-20 pizza mb-4 aspect-square">
           <Image
+            className="w-20 h-20"
             src="/pizza.png"
             alt="A glourious flying pizza slice"
             title="Pizza yay"
-            width={160}
-            height={160}
+            width={80}
+            height={80}
           />
         </div>
 
