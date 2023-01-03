@@ -48,7 +48,7 @@ export default function Home({ books, games }) {
           Hello there! <br className="hidden lg:inline-block" />My name is <strong className={textGradientClass}>Jeroen</strong> and <br className="hidden md:inline-block" />I&apos;m a <strong className={textGradientClass}>UX Engineer</strong>.
         </p>
 
-        <div className="prose dark:prose-invert prose-headings:mb-4 prose-p:my-2 prose-a:font-medium">
+        <div className="prose dark:prose-invert prose-headings:mb-4 prose-p:my-2 prose-a:font-semibold prose-a:no-underline prose-a:border-orange-300 dark:prose-a:border-green-400 prose-a:border-b-2">
           <div className="not-prose mt-4 mb-12">
             <ul className="flex gap-3 flex-wrap">
               {socialLinks.map((link, index) => (
