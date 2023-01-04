@@ -36,11 +36,12 @@ export default function Home({ books, games }) {
         </div>
         <div className="w-20 pizza mb-4 aspect-square">
           <Image
+            className="w-20 h-20"
             src="/pizza.png"
             alt="A glourious flying pizza slice"
             title="Pizza yay"
-            width={160}
-            height={160}
+            width={80}
+            height={80}
           />
         </div>
 
@@ -48,7 +49,7 @@ export default function Home({ books, games }) {
           Hello there! <br className="hidden lg:inline-block" />My name is <strong className={textGradientClass}>Jeroen</strong> and <br className="hidden md:inline-block" />I&apos;m a <strong className={textGradientClass}>UX Engineer</strong>.
         </p>
 
-        <div className="prose dark:prose-invert prose-headings:mb-4 prose-p:my-2 prose-a:font-medium">
+        <div className="prose dark:prose-invert prose-headings:mb-4 prose-p:my-2 prose-a:font-semibold prose-a:no-underline prose-a:border-orange-300 dark:prose-a:border-green-400 prose-a:border-b-2">
           <div className="not-prose mt-4 mb-12">
             <ul className="flex gap-3 flex-wrap">
               {socialLinks.map((link, index) => (

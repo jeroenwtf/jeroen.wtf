@@ -30,9 +30,9 @@
 }
 
 .dark #map-svg .lived {
-  @apply fill-rose-700;
+  @apply fill-green-500;
 }
 
 .dark #map-svg .visited {
-  @apply fill-orange-600;
+  @apply fill-cyan-700;
 }
