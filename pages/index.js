@@ -6,6 +6,7 @@ import Logos from 'components/Logos'
 import Reading from 'components/Reading'
 import Playing from 'components/Playing'
 import WorldMap from 'components/WorldMap'
+import Tag from 'components/Tag'
 
 export default function Home({ books, games }) {
   const textGradientClass = 'font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-300 to-rose-600 dark:from-green-400 dark:to-cyan-600';
@@ -79,6 +80,30 @@ export default function Home({ books, games }) {
           <p>I started as a freelance designer and developer, but in recent years I&apos;ve focused on frontend development. This has given me a special perspective on how to approach a project and visually implement it effectively.</p>
           <p>I&apos;m comfortable working with different teams, including Design, Content, and Engineering, to find the right solutions and deliver high-quality products.</p>
           <p>This helps to avoid unrealistic requirements and surprises, resulting in less frustration and better products. A solid design system is key to a smooth workflow, strong brand, and maintainable code.</p>
+
+          <h3>Buzzwords</h3>
+          <p>Some of the following things are part of my daily workflow and some are used ocasionally. And some I forgot to add.</p>
+          <div className='not-prose mb-10 mt-6'>
+            <div className='flex gap-2 flex-wrap'>
+              <Tag type="language">HTML</Tag>
+              <Tag type="language">CSS</Tag>
+              <Tag type="language">JavaScript</Tag>
+              <Tag type="service">Design Systems</Tag>
+              <Tag type="library">React</Tag>
+              <Tag type="library">TailwindCSS</Tag>
+              <Tag type="library">Next.js</Tag>
+              <Tag type="library">Astro</Tag>
+              <Tag type="library">Eleventy</Tag>
+              <Tag type="language">SCSS</Tag>
+              <Tag type="library">Prisma</Tag>
+              <Tag type="library">Framer Motion</Tag>
+              <Tag type="language">Ruby</Tag>
+              <Tag type="library">View Components</Tag>
+              <Tag type="library">Stimulus</Tag>
+              <Tag type="service">Figma</Tag>
+              <Tag type="service">Adobe Photoshop</Tag>
+            </div>
+          </div>
 
           <h3>Things I do when I&apos;m not coding</h3>
           <p>I enjoy life off screen, doing photography (you can check <a href="https://instagram.com/jeroenwtf" target="_blank" rel="noreferrer">my Instagram</a>), playing music or hiking and climbing.</p>
