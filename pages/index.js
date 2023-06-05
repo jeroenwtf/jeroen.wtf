@@ -156,16 +156,16 @@ export default function Home({ books, games }) {
 
 export async function getStaticProps() {
   const books = [
+    { title: 'Rework', isbn: '978-1407062853', cover: '' },
     { title: 'The Lost World', isbn: '978-0679419464', cover: '' },
     { title: 'Jurassic Park', isbn: '978-1784752224', cover: '' },
-    { title: 'The Hobbit', isbn: '978-0547928227', cover: '' },
   ]
 
   books[0].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[0].isbn}`).then(response => response.json()).then(data => data.url)
   books[1].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[1].isbn}`).then(response => response.json()).then(data => data.url)
   books[2].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[2].isbn}`).then(response => response.json()).then(data => data.url)
 
-  const gameIds = '14593,71,538'
+  const gameIds = '418,107218,14593'
 
   const options = {
     method: 'POST',
