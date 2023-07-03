@@ -156,9 +156,9 @@ export default function Home({ books, games }) {
 
 export async function getStaticProps() {
   const books = [
+    { title: 'The Martian', isbn: '978-0553418026', cover: '' },
+    { title: 'Remote', isbn: '978-0091954673', cover: '' },
     { title: 'Rework', isbn: '978-1407062853', cover: '' },
-    { title: 'The Lost World', isbn: '978-0679419464', cover: '' },
-    { title: 'Jurassic Park', isbn: '978-1784752224', cover: '' },
   ]
 
   books[0].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[0].isbn}`).then(response => response.json()).then(data => data.url)
