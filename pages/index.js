@@ -157,13 +157,13 @@ export default function Home({ books, games }) {
 export async function getStaticProps() {
   const books = [
     { title: 'The Martian', isbn: '978-0553418026', cover: '' },
-    { title: 'Remote', isbn: '978-0091954673', cover: '' },
+    { title: 'Remote', isbn: '978-0804137508', cover: '' },
     { title: 'Rework', isbn: '978-1407062853', cover: '' },
   ]
 
-  books[0].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[0].isbn}`).then(response => response.json()).then(data => data.url)
-  books[1].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[1].isbn}`).then(response => response.json()).then(data => data.url)
-  books[2].cover = await fetch(`https://bookcover-api.onrender.com/bookcover/${books[2].isbn}`).then(response => response.json()).then(data => data.url)
+  books[0].cover = await fetch(`https://api.bookcover.longitood.com/bookcover/${books[0].isbn}`).then(response => response.json()).then(data => data.url)
+  books[1].cover = await fetch(`https://api.bookcover.longitood.com/bookcover/${books[1].isbn}`).then(response => response.json()).then(data => data.url)
+  books[2].cover = await fetch(`https://api.bookcover.longitood.com/bookcover/${books[2].isbn}`).then(response => response.json()).then(data => data.url)
 
   const gameIds = '418,107218,14593'
 
