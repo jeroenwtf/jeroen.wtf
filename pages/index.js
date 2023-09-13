@@ -155,17 +155,18 @@ export default function Home({ books, games }) {
 }
 
 export async function getStaticProps() {
-  const books = [
+  const booksInfo = [
+    { title: 'Band of Brothers', isbn: '978-0743429900', cover: '' },
     { title: 'The Martian', isbn: '978-0553418026', cover: '' },
     { title: 'Remote', isbn: '978-0804137508', cover: '' },
-    { title: 'Rework', isbn: '978-1407062853', cover: '' },
   ]
 
-  books[0].cover = await fetch(`https://api.bookcover.longitood.com/bookcover/${books[0].isbn}`).then(response => response.json()).then(data => data.url)
-  books[1].cover = await fetch(`https://api.bookcover.longitood.com/bookcover/${books[1].isbn}`).then(response => response.json()).then(data => data.url)
-  books[2].cover = await fetch(`https://api.bookcover.longitood.com/bookcover/${books[2].isbn}`).then(response => response.json()).then(data => data.url)
+  const books = booksInfo.map(book => {
+    book.cover = `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`
+    return book;
+  })
 
-  const gameIds = '418,107218,14593'
+  const gameIds = '1877,203722,418'
 
   const options = {
     method: 'POST',

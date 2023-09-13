@@ -5,6 +5,7 @@ const nextConfig = {
     domains: [
       'books.google.com',
       'images.igdb.com',
+      'covers.openlibrary.org',
     ],
   },
   webpack(config) {
