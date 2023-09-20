@@ -15,7 +15,7 @@ export default function Home({ books, games }) {
     { text: 'LinkedIn', url: 'https://www.linkedin.com/in/jeroenwtf/', icon: 'linkedin' },
     { text: 'GitHub', url: 'https://github.com/jeroenwtf', icon: 'github' },
     { text: 'Twitter', url: 'https://twitter.com/jeroen_wtf', icon: 'twitter' },
-    { text: 'Mastodon', url: 'https://m.stratonauts.co/@jeroen', icon: 'mastodon' },
+    { text: 'Mastodon', url: 'https://mastodon.social/@jeroenwtf', icon: 'mastodon' },
     { text: 'Instagram', url: 'https://instagram.com/jeroenwtf', icon: 'instagram' },
   ]
 
