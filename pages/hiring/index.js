@@ -52,7 +52,7 @@ export default function Hiring({ books, games }) {
               I&apos;ve been doing it for years with zero problems.
             </li>
             <li>
-              <strong>I need to know the salary range</strong>. I&apos;m not greedy, I just have to take care of my family. If the salary range is below <strong>55k eur/year</strong>, it&apos;s not a currently viable option for me.
+              <strong>I need to know the salary range</strong>. I&apos;m not greedy, I just have to take care of my family. If the salary range is below <strong>60k eur/year</strong>, it&apos;s not a currently viable option for me.
             </li>
           </ul>
 
