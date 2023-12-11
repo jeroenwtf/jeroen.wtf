@@ -117,8 +117,9 @@ export default function Home({ books, games }) {
           </div>
 
           <h2 className="dark:text-zinc-100">Now</h2>
-          <p>I wanted to focus on JavaScript, lately. Trying to make a couple of side projects with <a target="_blank" href="https://nextjs.org/" rel="noreferrer">Next.js</a>, <a target="_blank" href="https://www.prisma.io/" rel="noreferrer">Prisma</a> and <a target="_blank" href="https://trpc.io/" rel="noreferrer">tRPC</a>.</p>
-          <p>Had to find ways to disconnect so started to read fiction books again and playing videogames on the Steam Deck. Damn, amazing piece of technology. Kudos to Valve to make it so easy to tinker with it.</p>
+          <p className="italic">December, 2023</p>
+          <p>I&apos;m getting ready to move back to the center of Barcelona, to the same studio I was living back in 2020.</p>
+          <p>Codewise I&apos;ve been learning Ruby on Rails. Reminds me of the time I was doing PHP, kind of missed it. Aside from that, in the last week I&apos;ve been feeling more curiosity about AI technologies. Maybe I will get into it more seriously soon.</p>
 
           <h2 className="dark:text-zinc-100">Get in touch</h2>
           <p>If you have any questions, just drop me a line in any social media or just...</p>
@@ -156,9 +157,9 @@ export default function Home({ books, games }) {
 
 export async function getStaticProps() {
   const booksInfo = [
-    { title: 'Band of Brothers', isbn: '978-0743429900', cover: '' },
-    { title: 'The Martian', isbn: '978-0553418026', cover: '' },
-    { title: 'Remote', isbn: '978-0804137508', cover: '' },
+    { title: 'Project Hail Mary', isbn: '978-1529100617', cover: '' },
+    { title: 'The Alchemist', isbn: '978-0060834838', cover: '' },
+    { title: 'Harry Potter and the Prisoner of Azkaban', isbn: '978-0439554923', cover: '' },
   ]
 
   const books = booksInfo.map(book => {
@@ -166,7 +167,7 @@ export async function getStaticProps() {
     return book;
   })
 
-  const gameIds = '1877,203722,418'
+  const gameIds = '6880,25076,165351'
 
   const options = {
     method: 'POST',
