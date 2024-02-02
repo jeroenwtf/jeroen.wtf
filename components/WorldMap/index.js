@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 
 export default function WorldMap() {
-  const visited = ['BE', 'CH', 'DE', 'GB', 'HR', 'IE', 'IT', 'JP', 'LU', 'FR', 'NL', 'SI', 'TR']
+  const visited = ['BE', 'CH', 'DE', 'GB', 'HR', 'IE', 'IT', 'JP', 'LU', 'FR', 'NL', 'SI', 'TR', 'US']
   const lived = ['ES']
 
   useEffect(() => {
