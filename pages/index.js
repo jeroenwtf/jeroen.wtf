@@ -7,6 +7,7 @@ import Reading from 'components/Reading'
 import Playing from 'components/Playing'
 import WorldMap from 'components/WorldMap'
 import Tag from 'components/Tag'
+import FooterChart from 'components/FooterChart'
 
 export default function Home({ books, games }) {
   const textGradientClass = 'font-bold text-transparent bg-clip-text bg-gradient-to-br from-orange-300 to-rose-600 dark:from-green-400 dark:to-cyan-600';
@@ -151,6 +152,7 @@ export default function Home({ books, games }) {
           }
         </footer>
       </div>
+      <FooterChart />
     </>
   )
 }
