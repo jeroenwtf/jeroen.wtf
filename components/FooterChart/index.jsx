@@ -56,7 +56,9 @@ export default function FooterChart(){
     },
     yaxis: {
       min: 0,
-      max: 300,
+      max: function(max) { 
+        return max > 200 ? max : 200
+      },
       show: false,
     },
     colors: resolvedTheme === "dark" ? [colors.zinc[700]] : [colors.zinc[200]]
