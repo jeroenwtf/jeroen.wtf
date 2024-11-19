@@ -7,7 +7,6 @@ import Reading from "components/Reading";
 import Playing from "components/Playing";
 import WorldMap from "components/WorldMap";
 import Tag from "components/Tag";
-import FooterChart from "components/FooterChart";
 
 export default function Home({ books, games }) {
   const textGradientClass =
@@ -228,14 +227,13 @@ export default function Home({ books, games }) {
             <br />
             Jeroen van Meerendonk
           </p>
-          {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA && (
+          {process.env.COMMIT_REF && (
             <div className="mt-10 border-t border-zinc-200 pt-4 text-xs text-zinc-400 dark:border-zinc-700 dark:text-zinc-600">
-              <p>Version: {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA}</p>
+              <p>Version: {process.env.COMMIT_REF}</p>
             </div>
           )}
         </footer>
       </div>
-      <FooterChart />
     </>
   );
 }
