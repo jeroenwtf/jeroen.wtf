@@ -83,7 +83,6 @@ export default function Home({ books, games }) {
                   >
                     <ReactSVG
                       className="w-4 fill-zinc-700 group-hover:fill-zinc-800 dark:fill-zinc-400 dark:group-hover:fill-white"
-                      alt={`${link.text}'s icon`}
                       src={`icons/${link.icon}.svg`}
                     />
                     <span>{link.text}</span>
