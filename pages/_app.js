@@ -1,8 +1,8 @@
-import { Quicksand } from '@next/font/google'
-import { ThemeProvider } from 'next-themes'
-import '../styles/globals.css'
+import { Quicksand } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import "../styles/globals.css";
 
-const quicksand = Quicksand({ subsets: ['latin'] })
+const quicksand = Quicksand({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }) {
   return (
@@ -11,5 +11,5 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
     </ThemeProvider>
-  )
+  );
 }
