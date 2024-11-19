@@ -161,15 +161,8 @@ export default function Home({ books, games }) {
 
           <h3>Things I do when I&apos;m not coding</h3>
           <p>
-            I enjoy life off screen, doing photography (you can check{" "}
-            <a
-              href="https://instagram.com/jeroenwtf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              my Instagram
-            </a>
-            ), playing music or hiking and climbing.
+            I enjoy life off the computer, doing photography, playing music or
+            playing videogames in the Steam Deck.
           </p>
 
           <h2 className="dark:text-zinc-100">Coded for</h2>
