@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+
+import DomestikaLight from "assets/logos/light/domestika.png";
+import DomestikaDark from "assets/logos/dark/domestika.png";
+import NetbynetLight from "assets/logos/light/netbynet.png";
+import NetbynetDark from "assets/logos/dark/netbynet.png";
+import CdmonLight from "assets/logos/light/cdmon.png";
+import CdmonDark from "assets/logos/dark/cdmon.png";
+import QustodioLight from "assets/logos/light/qustodio.png";
+import QustodioDark from "assets/logos/dark/qustodio.png";
+import MortensenLight from "assets/logos/light/mortensen.png";
+import MortensenDark from "assets/logos/dark/mortensen.png";
+import ElsaperettiLight from "assets/logos/light/elsaperetti.png";
+import ElsaperettiDark from "assets/logos/dark/elsaperetti.png";
+import McdonaldsLight from "assets/logos/light/mcdonalds.png";
+import McdonaldsDark from "assets/logos/dark/mcdonalds.png";
+import TapngoLight from "assets/logos/light/tapngo.png";
+import TapngoDark from "assets/logos/dark/tapngo.png";
+import CyneekLight from "assets/logos/light/cyneek.png";
+import CyneekDark from "assets/logos/dark/cyneek.png";
+
+const clients = [
+	{ name: "Domestika", lightIcon: DomestikaLight, darkIcon: DomestikaDark },
+	{ name: "Netbynet", lightIcon: NetbynetLight, darkIcon: NetbynetDark },
+	{ name: "CDmon", lightIcon: CdmonLight, darkIcon: CdmonDark },
+	{ name: "Qustodio", lightIcon: QustodioLight, darkIcon: QustodioDark },
+	{ name: "Mortensen", lightIcon: MortensenLight, darkIcon: MortensenDark },
+	{
+		name: "Elsa Peretti Foundation",
+		lightIcon: ElsaperettiLight,
+		darkIcon: ElsaperettiDark,
+	},
+	{ name: "McDonalds", lightIcon: McdonaldsLight, darkIcon: McdonaldsDark },
+	{ name: "TapNGo", lightIcon: TapngoLight, darkIcon: TapngoDark },
+	{ name: "Cyneek", lightIcon: CyneekLight, darkIcon: CyneekDark },
+];
+---
+
+<h3 class="font-bold mb-4">Coded for</h3>
+
+<div class="flex flex-wrap gap-2">
+	{
+		clients.map((client) => (
+			<li class="place-logo h-8 sm:h-12 relative opacity-80 hover:opacity-100 transition-opacity">
+				<Image
+					src={client.lightIcon}
+					alt={client.name}
+					class="h-8 sm:h-12 w-auto dark:opacity-0"
+				/>
+				<Image
+					src={client.darkIcon}
+					alt={client.name}
+					class="h-8 sm:h-12 w-auto opacity-0 dark:opacity-100 absolute inset-0"
+				/>
+			</li>
+		))
+	}
+</div>

@@ -1,0 +1,52 @@
+---
+Astro.response.headers.set(
+	"Cache-Control",
+	"public, max-age=31536000, immutable",
+);
+
+import Themes from "astro-themes";
+
+interface Props {
+	title: string;
+	description: string;
+	keywords: string;
+}
+
+const { title, description, keywords } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="icon" href="/favicon.ico" />
+		<Themes />
+	</head>
+	<body
+		class="font-mono flex justify-center min-h-screen dark:bg-zinc-900 dark:text-zinc-100"
+	>
+		<main class="w-full max-w-4xl p-10">
+			<div class="flex gap-10 mb-20">
+				<h1 class="font-bold">Jeroen van Meerendonk</h1>
+
+				<ul class="flex gap-10 text-zinc-500">
+					<li>Home</li>
+					<li>Now</li>
+					<li>Notes</li>
+					<li>Links</li>
+				</ul>
+			</div>
+
+			<slot />
+
+			<p class="mt-10 text-center text-zinc-500">
+				Hand made with <span class="text-red-500">{"<3"}</span>
+			</p>
+		</main>
+	</body>
+</html>

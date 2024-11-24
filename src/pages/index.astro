@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
+import SocialNetworks from "../components/SocialNetworks.astro";
+import Buzzwords from "../components/Buzzwords.astro";
+import Clients from "../components/Clients.astro";
+---
+
+<Layout
+	title="Jeroen van Meerendonk - UX Engineer"
+	description="UX Engineer and frontend developer focused on Design Systems with HTML, CSS and JavaScript."
+	keywords="frontend, developer, javascript, design, systems, html, css, javascript, ruby, rails"
+>
+	<div class="prose prose-headings:mb-4 prose-p:my-6 prose-a:border-b-2 prose-a:border-orange-300 prose-a:font-semibold prose-a:no-underline dark:prose-invert dark:prose-a:border-green-400">
+		<div class="mb-6">
+			<p>
+				Hello there!<br>
+				My name is <strong>Jeroen</strong> and I'm a <strong>UX designer</strong>.
+			</p>
+		</div>
+
+		<div class="not-prose my-10">
+			<SocialNetworks />
+		</div>
+
+		<blockquote class="border-l-4 border-zinc-700 pl-4 mb-6" cite="https://dev.to/emmawedekind/ux-engineering-3hem">
+			<p>A UX Engineer is a Front-End Engineer who sits on a cross-functional design team and helps facilitate collaboration between design and engineering.</p>
+
+			<footer class="mt-2 text-zinc-500">— Emma Bostian, <a target="_blank" href="https://dev.to/emmabostian/ux-engineering-3hem" rel="noreferrer">What Is A UX Engineer?</a></footer>
+		</blockquote>
+
+		<p>I started as a freelance designer and developer, but in recent years I've focused on frontend development. This has given me a special perspective on how to approach a project and visually implement it effectively.</p>
+
+		<p>I'm comfortable working with different teams, including Design, Content, and Engineering, to find the right solutions and deliver high-quality products.</p>
+
+		<p>This helps to avoid unrealistic requirements and surprises, resulting in less frustration and better products. A solid design system is key to a smooth workflow, strong brand, and maintainable code.</p>
+
+		<div class="not-prose my-10">
+			<Buzzwords />
+		</div>
+
+		<div class="not-prose my-10">
+			<Clients />
+		</div>
+	</div>
+</Layout>

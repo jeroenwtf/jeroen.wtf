@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socialNetworks = [
+	{
+		name: "LinkedIn",
+		icon: "linkedin",
+		url: "https://www.linkedin.com/in/jeroenwtf/",
+	},
+	{
+		name: "GitHub",
+		icon: "github",
+		url: "https://github.com/jeroenwtf/",
+	},
+	{
+		name: "Mastodon",
+		icon: "mastodon",
+		url: "https://mastodon.social/@jeroenwtf/",
+	},
+	{
+		name: "Bluesky",
+		icon: "bluesky",
+		url: "https://bsky.app/profile/jeroen.wtf",
+	},
+	{
+		name: "Instagram",
+		icon: "instagram",
+		url: "https://instagram.com/jeroenwtf/",
+	},
+];
+---
+
+<ul class="flex items-center gap-6">
+	{
+		socialNetworks.map((network) => (
+			<li>
+				<a
+					href={network.url}
+					target="_blank"
+					title={network.name}
+					class="block"
+				>
+					<Icon
+						name={network.icon}
+						class="dark:fill-zinc-100"
+						width={24}
+						height={24}
+					/>
+				</a>
+			</li>
+		))
+	}
+</ul>
