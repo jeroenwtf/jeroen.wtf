@@ -9,6 +9,15 @@ const notesCollection = defineCollection({
 	}),
 });
 
+const logCollection = defineCollection({
+	type: "content",
+	schema: z.object({
+		date: z.string(),
+		location: z.string().optional(),
+	}),
+});
+
 export const collections = {
-	'notes': notesCollection
+	'notes': notesCollection,
+	'log': logCollection
 }
