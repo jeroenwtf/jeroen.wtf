@@ -1,0 +1,83 @@
+---
+Astro.response.headers.set(
+	"Cache-Control",
+	"public, max-age=31536000, immutable",
+);
+
+import Themes from "astro-themes";
+import "@fontsource/merriweather";
+import "@fontsource-variable/jetbrains-mono";
+
+interface Props {
+	title?: string;
+}
+
+let { title } = Astro.props;
+title = title ? `${title} - ` : "";
+
+const description =
+	"UX Engineer and frontend developer focused on Design Systems with HTML, CSS and JavaScript.";
+const keywords =
+	"frontend, developer, javascript, design, systems, html, css, javascript, ruby, rails";
+
+const currentPath = Astro.url.pathname;
+
+const sections = [
+	{ label: "Home", url: "/" },
+	{ label: "Now", url: "/now" },
+	// { label: "Notes", url: "/notes" },
+	{ label: "Links", url: "https://links.jeroen.wtf" },
+];
+
+const activeLinkClasses =
+	"text-black dark:text-white border-b-2 border-orange-300 font-semibold dark:border-green-400";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>
+			{`${title}Jeroen van Meerendonk - UX Engineer`}
+		</title>
+		<link rel="icon" href="/favicon.ico" />
+		<Themes />
+	</head>
+	<body
+		class="font-mono flex justify-center min-h-screen dark:bg-gray-900 dark:text-gray-100"
+	>
+		<main class="w-full max-w-3xl p-4 sm:p-10">
+			<div class="flex flex-col sm:flex-row gap-6 sm:gap-10 mb-10 sm:mb-20">
+				<h1 class="font-bold"><a href="/">Jeroen van Meerendonk</a></h1>
+
+				<ul class="flex gap-6 sm:gap-10 text-gray-500">
+					{
+						sections.map((section) => (
+							<li>
+								<a
+									href={section.url}
+									class={currentPath === section.url ? activeLinkClasses : ""}
+								>
+									{section.label}
+								</a>
+							</li>
+						))
+					}
+					<li class="hidden md:list-item text-orange-500 dark:text-green-400">
+						<a class="ml-auto" href="mailto:hola@jeroen.wtf">Email me</a>
+					</li>
+				</ul>
+			</div>
+
+			<slot />
+
+			<p class="mt-20 text-gray-500">
+				Handmade with <span class="text-red-500">{"<3"}</span> and <a href="https://astro.build/">Astro</a>
+			</p>
+		</main>
+	</body>
+</html>

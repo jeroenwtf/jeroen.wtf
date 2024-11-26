@@ -1,0 +1,14 @@
+---
+import clsx from "clsx";
+
+const { type } = Astro.props;
+
+const tagClasses = clsx(
+	"px-2 py-0.5 font-semibold rounded",
+	type === "language"
+		? "text-gray-600 bg-gray-200 dark:text-gray-200 dark:bg-gray-800"
+		: "text-gray-600 bg-gray-200/50 dark:text-gray-400 dark:bg-gray-800",
+);
+---
+
+<span class={tagClasses}><slot /></span>

@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Prose from "../components/Prose.astro";
+import SocialNetworks from "../components/SocialNetworks.astro";
+import Buzzwords from "../components/Buzzwords.astro";
+import Clients from "../components/Clients.astro";
+
+const quote =
+	"A UX Engineer is a Front-End Engineer who sits on a cross-functional design team and helps facilitate collaboration between design and engineering.";
+---
+
+<Layout>
+	<Prose>
+		<p class="font-display text-3xl sm:text-4xl !leading-snug !mb-10 max-w-sm sm:max-w-md">
+			Hello there!<br />
+			My name is <strong>Jeroen</strong> and I'm a <strong>UX engineer</strong>.
+		</p>
+
+		<div class="not-prose mb-14 sm:mb-20">
+			<SocialNetworks />
+		</div>
+
+		<blockquote
+			class="border-l-4 border-gray-700 pl-4 mb-10"
+			cite="https://dev.to/emmawedekind/ux-engineering-3hem"
+		>
+			<p>{quote}</p>
+
+			<footer class="mt-2 text-gray-500">
+				— Emma Bostian, <a
+					target="_blank"
+					href="https://dev.to/emmabostian/ux-engineering-3hem"
+					rel="noreferrer">What Is A UX Engineer?</a
+				>
+			</footer>
+		</blockquote>
+
+		<p>
+			I started as a freelance designer and developer, but at some point decided
+			to focus on frontend development. This has given me a special perspective
+			on how to approach a project and visually implement it effectively.
+		</p>
+
+		<p>
+			I'm comfortable working with different teams, including Design, Content,
+			and Engineering, to find the right solutions and deliver high-quality
+			products.
+		</p>
+
+		<p>
+			This helps to avoid unrealistic requirements and surprises, resulting in
+			less frustration and better products. A solid design system is key to a
+			smooth workflow, strong brand, and maintainable code.
+		</p>
+
+		<div class="not-prose my-14 sm:my-20">
+			<Buzzwords />
+		</div>
+
+		<div class="not-prose my-14 sm:my-20">
+			<Clients />
+		</div>
+
+		<h3>Get in touch</h3>
+
+		<p class="!mt-4">
+			If you have any questions, just drop me a line in any social media or just <a
+				href="mailto:hola@jeroen.wtf">send me an email</a
+			>.
+		</p>
+	</Prose>
+</Layout>
