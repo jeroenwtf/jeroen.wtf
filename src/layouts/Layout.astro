@@ -54,7 +54,7 @@ const activeLinkClasses =
 			<div class="flex flex-col sm:flex-row gap-6 sm:gap-10 mb-10 sm:mb-20">
 				<h1 class="font-bold"><a href="/">Jeroen van Meerendonk</a></h1>
 
-				<ul class="flex gap-6 sm:gap-10 text-gray-500">
+				<ul class="flex gap-6 sm:gap-10 text-gray-500 dark:text-gray-400">
 					{
 						sections.map((section) => (
 							<li>
@@ -67,7 +67,7 @@ const activeLinkClasses =
 							</li>
 						))
 					}
-					<li class="hidden md:list-item text-orange-500 dark:text-green-400">
+					<li class="hidden md:list-item text-orange-600 dark:text-green-400">
 						<a class="ml-auto" href="mailto:hola@jeroen.wtf">Email me</a>
 					</li>
 				</ul>
@@ -75,8 +75,8 @@ const activeLinkClasses =
 
 			<slot />
 
-			<p class="mt-20 text-gray-500">
-				Handmade with <span class="text-red-500">{"<3"}</span> and <a href="https://astro.build/">Astro</a>
+			<p class="mt-20 text-gray-500 dark:text-gray-400">
+				Handmade with <span class="text-red-600 dark:text-red-500">{"<3"}</span> and <a href="https://astro.build/">Astro</a>
 			</p>
 		</main>
 	</body>
