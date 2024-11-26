@@ -18,14 +18,11 @@ const logEntries = await getCollection("log", ({ id }) => {
 const lastEntry = logEntries.shift();
 const { Content } = await lastEntry.render();
 
-console.log("log", lastEntry);
 // Divide in sections
 // Watching
 // Reading
 // Playing
 //
-// Log?
-// Make a new entry for every update.
 // The other sections are updated every new deploy.
 ---
 

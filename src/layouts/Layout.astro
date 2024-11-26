@@ -24,7 +24,7 @@ const currentPath = Astro.url.pathname;
 
 const sections = [
 	{ label: "Home", url: "/" },
-	{ label: "Now", url: "/now" },
+	{ label: "Now", url: "/now/" },
 	// { label: "Notes", url: "/notes" },
 	{ label: "Links", url: "https://links.jeroen.wtf" },
 ];
@@ -76,7 +76,8 @@ const activeLinkClasses =
 			<slot />
 
 			<p class="mt-20 text-gray-500 dark:text-gray-400">
-				Handmade with <span class="text-red-600 dark:text-red-500">{"<3"}</span> and <a href="https://astro.build/">Astro</a>
+				Handmade with <span class="text-red-600 dark:text-red-500">{"<3"}</span>
+				and <a href="https://astro.build/">Astro</a>
 			</p>
 		</main>
 	</body>
