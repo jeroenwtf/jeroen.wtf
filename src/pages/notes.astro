@@ -1,0 +1,30 @@
+---
+import { getTitleFromFile } from "../helpers/notes";
+import Layout from "../layouts/Layout.astro";
+import Prose from "../components/Prose.astro";
+
+import { getCollection } from "astro:content";
+
+const notes = await getCollection("notes", (entry) =>
+	entry.data.tags?.includes("publish"),
+);
+---
+
+<Layout title="Notes">
+	<Prose>
+		<h1>Notes</h1>
+
+		<ul>
+			{
+				notes.map((note) => (
+					<li>
+						<p>{getTitleFromFile(note.id)}</p>
+						<strong>{note.slug}</strong> {note.id}
+						<br />
+						<a href={`/notes/${note.slug}`}>Link</a>
+					</li>
+				))
+			}
+		</ul>
+	</Prose>
+</Layout>

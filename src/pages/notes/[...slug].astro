@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+	const notes = await getCollection("notes");
+
+	return notes.map((note) => ({
+		params: {
+			slug: note.slug,
+		},
+	}));
+}
+
+const notes = await getCollection("notes");
+const { slug } = Astro.params;
+const note = notes.find((entry) => entry.slug === slug);
+
+if (!note) throw new Error(`Note not found: ${Astro.params.slug}`);
+---
+
+<article>
+	<h1>{note.id}</h1>
+	<p>{note.data.date}</p>
+	<p>Tags: {note.data.tags.join(", ")}</p>
+	<div>{note.body}</div>
+</article>
