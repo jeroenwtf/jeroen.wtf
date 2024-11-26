@@ -4,33 +4,29 @@ import Prose from "../components/Prose.astro";
 import SocialNetworks from "../components/SocialNetworks.astro";
 import Buzzwords from "../components/Buzzwords.astro";
 import Clients from "../components/Clients.astro";
+
+const quote =
+	"A UX Engineer is a Front-End Engineer who sits on a cross-functional design team and helps facilitate collaboration between design and engineering.";
 ---
 
 <Layout>
 	<Prose>
-		<div class="mb-6">
-			<p>
-				Hello there!<br />
-				My name is <strong>Jeroen</strong> and I'm a <strong>UX designer</strong
-				>.
-			</p>
-		</div>
+		<p class="font-display text-3xl sm:text-4xl !leading-snug !mb-10">
+			Hello there!<br />
+			My name is <strong>Jeroen</strong> and I'm a <strong>UX engineer</strong>.
+		</p>
 
-		<div class="not-prose my-10">
+		<div class="not-prose mb-14 sm:mb-20">
 			<SocialNetworks />
 		</div>
 
 		<blockquote
-			class="border-l-4 border-zinc-700 pl-4 mb-10"
+			class="border-l-4 border-gray-700 pl-4 mb-10"
 			cite="https://dev.to/emmawedekind/ux-engineering-3hem"
 		>
-			<p>
-				A UX Engineer is a Front-End Engineer who sits on a cross-functional
-				design team and helps facilitate collaboration between design and
-				engineering.
-			</p>
+			<p>{quote}</p>
 
-			<footer class="mt-2 text-zinc-500">
+			<footer class="mt-2 text-gray-500">
 				— Emma Bostian, <a
 					target="_blank"
 					href="https://dev.to/emmabostian/ux-engineering-3hem"
@@ -40,7 +36,8 @@ import Clients from "../components/Clients.astro";
 		</blockquote>
 
 		<p>
-			I started as a freelance designer and developer, but at some point decided to focus on frontend development. This has given me a special perspective
+			I started as a freelance designer and developer, but at some point decided
+			to focus on frontend development. This has given me a special perspective
 			on how to approach a project and visually implement it effectively.
 		</p>
 
@@ -56,11 +53,11 @@ import Clients from "../components/Clients.astro";
 			smooth workflow, strong brand, and maintainable code.
 		</p>
 
-		<div class="not-prose my-20">
+		<div class="not-prose my-14 sm:my-20">
 			<Buzzwords />
 		</div>
 
-		<div class="not-prose my-20">
+		<div class="not-prose my-14 sm:my-20">
 			<Clients />
 		</div>
 
