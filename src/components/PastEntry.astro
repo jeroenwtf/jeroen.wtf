@@ -1,0 +1,8 @@
+---
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<h4>{entry.data.date}{entry.data.location && `, ${entry.data.location}`}</h4>
+
+<Content />
