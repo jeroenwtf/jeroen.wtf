@@ -1,4 +1,5 @@
 import defaultTheme from "tailwindcss/defaultTheme";
+const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,6 +10,9 @@ export default {
       center: true,
     },
     extend: {
+      colors: {
+        gray: colors.zinc,
+      },
       fontFamily: {
         mono: ["Jetbrains Mono", ...defaultTheme.fontFamily.mono],
         display: ["Merriweather", ...defaultTheme.fontFamily.serif],
