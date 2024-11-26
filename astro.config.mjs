@@ -4,7 +4,7 @@ import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 
 export default defineConfig({
-  site: "https://links.jeroen.wtf",
+  site: "https://jeroen.wtf",
   integrations: [tailwind(), icon(), robotsTxt()],
   output: "static",
 });
