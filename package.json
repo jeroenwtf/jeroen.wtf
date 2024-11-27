@@ -3,9 +3,10 @@
   "type": "module",
   "version": "3.0.0",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "dev": "npm run generate-build-info && astro dev",
+    "start": "npm run generate-build-info && astro dev",
+    "build": "npm run generate-build-info && astro build",
+    "generate-build-info": "node get-build-info.js",
     "preview": "astro preview",
     "astro": "astro"
   },

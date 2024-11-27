@@ -1,0 +1,3 @@
+[build]
+  command = "node get-build-info.js && astro build"
+  publish = "dist"

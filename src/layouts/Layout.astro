@@ -7,6 +7,7 @@ Astro.response.headers.set(
 import Themes from "astro-themes";
 import "@fontsource/merriweather";
 import "@fontsource-variable/jetbrains-mono";
+import Footer from "../components/footer.astro";
 
 interface Props {
 	title?: string;
@@ -54,7 +55,7 @@ const activeLinkClasses =
 	<body
 		class="font-mono flex justify-center min-h-screen dark:bg-gray-900 dark:text-gray-100"
 	>
-		<main class="w-full max-w-3xl p-4 sm:p-10">
+		<main class="w-full max-w-3xl p-4 py-8 sm:p-10">
 			<div class="flex flex-col sm:flex-row gap-6 sm:gap-10 mb-10 sm:mb-20">
 				<h1 class="font-bold"><a href="/">Jeroen van Meerendonk</a></h1>
 
@@ -79,10 +80,7 @@ const activeLinkClasses =
 
 			<slot />
 
-			<p class="mt-20 text-gray-500 dark:text-gray-400">
-				Handmade with <span class="text-red-600 dark:text-red-500">{"<3"}</span>
-				and <a href="https://astro.build/">Astro</a>
-			</p>
+			<Footer />
 		</main>
 	</body>
 </html>
