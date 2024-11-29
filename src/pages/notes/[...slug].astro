@@ -21,6 +21,7 @@ const note = notes.find((entry) => entry.slug === slug);
 
 if (!note) throw new Error(`Note not found: ${Astro.params.slug}`);
 
+const noteTitle = getTitleFromFile(note.id)
 const statusExplanation =
 	note.data.status === "draft"
 		? "I'm still working on it"
@@ -28,13 +29,11 @@ const statusExplanation =
 const { Content } = await note.render();
 ---
 
-<Layout>
+<Layout title={noteTitle}>
 	<article>
 		<header class="flex flex-col gap-4 mb-10 sm:mb-16">
 			<div class="text-gray-500 dark:text-gray-400">{note.id}</div>
-			<h1 class="font-display font-semibold text-3xl sm:text-4xl leading-snug">
-				{getTitleFromFile(note.id)}
-			</h1>
+			<h1 class="font-display font-semibold text-3xl sm:text-4xl leading-snug">{noteTitle}</h1>
 
 			<div
 				class="flex flex-wrap gap-x-6 border-t border-gray-300 dark:border-gray-700 mt-6 pt-4 text-gray-500 dark:text-gray-400"

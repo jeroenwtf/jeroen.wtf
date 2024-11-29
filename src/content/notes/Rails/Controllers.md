@@ -1,10 +1,10 @@
 ---
 status: draft
-modified: 2024-11-29T17:34:16+01:00
+modified: 2024-11-29T18:39:30+01:00
 created: 2024-10-09
 ---
 
-The controller is smart enough to know who to ask for [[information]] (to the [[Model|models]]) and who to pass it to display it correctly (to the [[Views|views]]), without doing the heavy lifting in any case.
+The controller is smart enough to know who to ask for information (to the [[Model|models]]) and who to pass it to display it correctly (to the [[Views|views]]), without doing the heavy lifting in any case.
 
 After an HTTP request is received, it goes through the [[02 - Areas/Rails/Routing|router]], who sends it to the appropriate controller and action. Then, all the variables created in that instance are passed to the view and sent back to the browser.
 
