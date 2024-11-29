@@ -1,5 +1,37 @@
-<div
-	class="prose prose-headings:mb-4 prose-p:my-6 prose-a:border-b-2 prose-a:border-orange-300 prose-a:font-semibold prose-a:no-underline dark:prose-invert dark:prose-a:border-green-400 max-w-none prose-headings:text-base prose-headings:font-bold"
->
+---
+import clsx from "clsx";
+
+const { type } = Astro.props;
+
+const linkClasses =
+	"prose-a:border-b-2 prose-a:border-orange-300 prose-a:font-semibold prose-a:no-underline dark:prose-a:border-green-400";
+
+const defaultClasses = clsx(
+	"prose prose-headings:mb-4 prose-p:my-6 dark:prose-invert max-w-none prose-headings:text-base prose-headings:font-bold",
+	linkClasses,
+);
+
+const noteClasses = clsx(
+	"prose dark:prose-invert",
+	"prose-headings:font-display",
+	linkClasses,
+	"[&_a.internal.new]:text-gray-500",
+	"dark:[&_a.internal.new]:text-gray-400",
+	"[&_a.internal.new]:border-gray-500",
+	"[&_a.internal.new]:border-b",
+	"[&_a.internal.new]:border-dotted",
+	"[&_a.internal.new]:pointer-events-none",
+	"[&_:not(pre)>code]:bg-gray-200",
+	"dark:[&_:not(pre)>code]:bg-gray-800",
+	"[&_:not(pre)>code]:rounded",
+	"[&_:not(pre)>code:before]:opacity-50",
+	"[&_:not(pre)>code:after]:opacity-50",
+	"[&_pre]:!bg-gray-800",
+);
+
+const proseClasses = clsx(type == "note" ? noteClasses : defaultClasses);
+---
+
+<div class={proseClasses}>
 	<slot />
 </div>

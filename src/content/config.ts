@@ -3,9 +3,10 @@ import { defineCollection, z } from "astro:content";
 const notesCollection = defineCollection({
 	type: 'content',
 	schema: z.object({
-		title: z.string().optional(),
-		tags: z.array(z.string()).optional(), // Tags must be an array of strings
-		date: z.string().optional(), // Optional date field
+		tags: z.array(z.string()).optional(),
+		created: z.date().optional(),
+		modified: z.date().optional(),
+		status: z.enum(['draft', 'published']).optional(),
 	}),
 });
 

@@ -1,4 +1,5 @@
 ---
+import Clarification from "../components/Clarification.astro";
 import buildInfo from "../build-info.json";
 
 const deployDate = new Date(buildInfo.deployTime).toLocaleString();
@@ -14,9 +15,8 @@ const deployInfo = `On ${deployDate} - ${buildInfo.commitMessage}`;
 	</p>
 
 	<p>
-		Last deploy: <span
-			class="cursor-help border-dotted border-b border-gray-400"
-			title={deployInfo}>{buildInfo.commitHash}</span
+		Last deploy: <Clarification text={deployInfo}
+			>{buildInfo.commitHash}</Clarification
 		>
 	</p>
 </footer>
