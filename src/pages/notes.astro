@@ -12,9 +12,9 @@ const notes = (await getCollection("notes", (entry) =>
 ---
 
 <Layout title="Notes">
-	<Prose>
-		<MainTitle>Notes</MainTitle>
+	<MainTitle>Notes</MainTitle>
 
+	<Prose>
 		<p>Here's some of my notes, with the ones I modified recently on the top. Some of them are <strong>drafts</strong>, but in any case, I'm not sure about anything so don't take them seriously.</p>
 
 		{notes.length == 0 && <p class="text-gray-500 dark:text-gray-400">Uh oh, there's no notes :(</p>}
