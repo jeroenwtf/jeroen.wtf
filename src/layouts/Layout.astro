@@ -8,6 +8,7 @@ import Themes from "astro-themes";
 import "@fontsource/merriweather";
 import "@fontsource-variable/jetbrains-mono";
 import Footer from "../components/footer.astro";
+import { SEO } from "astro-seo";
 
 interface Props {
 	title?: string;
@@ -15,6 +16,7 @@ interface Props {
 
 let { title } = Astro.props;
 title = title ? `${title} - ` : "";
+title = `${title}Jeroen van Meerendonk - UX Engineer`;
 
 const description =
 	"UX Engineer and frontend developer focused on Design Systems with HTML, CSS and JavaScript.";
@@ -37,17 +39,28 @@ const activeLinkClasses =
 <!doctype html>
 <html lang="en">
 	<head>
+		<SEO
+			title={title}
+			description={description}
+			openGraph={{
+				basic: {
+					title,
+					type: "A type.",
+					image: new URL("/opengraph.webp", Astro.site).toString(),
+				},
+			}}
+			extend={{
+				link: [{ rel: "icon", href: "/favicon.ico" }],
+			}}
+		/>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{`${title}Jeroen van Meerendonk - UX Engineer`}</title>
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<link rel="manifest" href="/site.webmanifest" />
-		<link rel="icon" href="/favicon.ico" />
 		<Themes />
 	</head>
 	<body
