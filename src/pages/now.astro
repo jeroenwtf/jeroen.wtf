@@ -8,11 +8,11 @@ import PastEntry from "../components/PastEntry.astro";
 import { getCollection } from "astro:content";
 
 const logEntries = await getCollection("log", ({ id }) => {
-	return /^\d{4}-\d{2}-\d{2}\.md$/.test(id);
+  return /^\d{4}-\d{2}-\d{2}\.md$/.test(id);
 }).then((entries) =>
-	entries.sort(
-		(a, b) => new Date(b.id.split(".")[0]) - new Date(a.id.split(".")[0]),
-	),
+  entries.sort(
+    (a, b) => new Date(b.id.split(".")[0]) - new Date(a.id.split(".")[0]),
+  ),
 );
 
 const lastEntry = logEntries.shift();
@@ -27,28 +27,28 @@ const { Content } = await lastEntry.render();
 ---
 
 <Layout title="Now">
-	<MainTitle>Now</MainTitle>
+  <MainTitle>Now</MainTitle>
 
-	<Prose>
-		<div class="mb-10 sm:mb-16">
-			<h3>
-				Updated on {lastEntry.data.date}{
-					lastEntry.data.location && `, from ${lastEntry.data.location}`
-				}
-			</h3>
-			<Content />
-		</div>
+  <Prose>
+    <div class="mb-10 sm:mb-16">
+      <h3>
+        Updated on {lastEntry.data.date}{
+          lastEntry.data.location && `, from ${lastEntry.data.location}`
+        }
+      </h3>
+      <Content />
+    </div>
 
-		<SecondaryTitle>Past entries</SecondaryTitle>
+    <SecondaryTitle>Past entries</SecondaryTitle>
 
-		<ul class="space-y-10">
-			{
-				logEntries.map((entry) => (
-					<li>
-						<PastEntry entry={entry} />
-					</li>
-				))
-			}
-		</ul>
-	</Prose>
+    <ul class="space-y-10">
+      {
+        logEntries.map((entry) => (
+          <li>
+            <PastEntry entry={entry} />
+          </li>
+        ))
+      }
+    </ul>
+  </Prose>
 </Layout>

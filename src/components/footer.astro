@@ -7,16 +7,16 @@ const deployInfo = `On ${deployDate} - ${buildInfo.commitMessage}`;
 ---
 
 <footer
-	class="flex flex-col sm:flex-row justify-between mt-20 text-gray-500 dark:text-gray-400"
+  class="flex flex-col sm:flex-row justify-between mt-20 text-gray-500 dark:text-gray-400"
 >
-	<p>
-		Handmade with <span class="text-red-600 dark:text-red-500">{"<3"}</span>
-		and <a href="https://astro.build/">Astro</a>
-	</p>
+  <p>
+    Handmade with <span class="text-red-600 dark:text-red-500">{"<3"}</span>
+    and <a href="https://astro.build/">Astro</a>
+  </p>
 
-	<p>
-		Last deploy: <Clarification text={deployInfo}
-			>{buildInfo.commitHash}</Clarification
-		>
-	</p>
+  <p>
+    Last deploy: <Clarification text={deployInfo}
+      >{buildInfo.commitHash}</Clarification
+    >
+  </p>
 </footer>

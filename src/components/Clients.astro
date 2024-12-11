@@ -21,39 +21,39 @@ import CyneekLight from "../assets/logos/light/cyneek.png";
 import CyneekDark from "../assets/logos/dark/cyneek.png";
 
 const clients = [
-	{ name: "Domestika", lightIcon: DomestikaLight, darkIcon: DomestikaDark },
-	{ name: "Netbynet", lightIcon: NetbynetLight, darkIcon: NetbynetDark },
-	{ name: "CDmon", lightIcon: CdmonLight, darkIcon: CdmonDark },
-	{ name: "Qustodio", lightIcon: QustodioLight, darkIcon: QustodioDark },
-	{ name: "Mortensen", lightIcon: MortensenLight, darkIcon: MortensenDark },
-	{
-		name: "Elsa Peretti Foundation",
-		lightIcon: ElsaperettiLight,
-		darkIcon: ElsaperettiDark,
-	},
-	{ name: "McDonalds", lightIcon: McdonaldsLight, darkIcon: McdonaldsDark },
-	{ name: "TapNGo", lightIcon: TapngoLight, darkIcon: TapngoDark },
-	{ name: "Cyneek", lightIcon: CyneekLight, darkIcon: CyneekDark },
+  { name: "Domestika", lightIcon: DomestikaLight, darkIcon: DomestikaDark },
+  { name: "Netbynet", lightIcon: NetbynetLight, darkIcon: NetbynetDark },
+  { name: "CDmon", lightIcon: CdmonLight, darkIcon: CdmonDark },
+  { name: "Qustodio", lightIcon: QustodioLight, darkIcon: QustodioDark },
+  { name: "Mortensen", lightIcon: MortensenLight, darkIcon: MortensenDark },
+  {
+    name: "Elsa Peretti Foundation",
+    lightIcon: ElsaperettiLight,
+    darkIcon: ElsaperettiDark,
+  },
+  { name: "McDonalds", lightIcon: McdonaldsLight, darkIcon: McdonaldsDark },
+  { name: "TapNGo", lightIcon: TapngoLight, darkIcon: TapngoDark },
+  { name: "Cyneek", lightIcon: CyneekLight, darkIcon: CyneekDark },
 ];
 ---
 
 <h2 class="font-bold mb-4 dark:text-white">Coded for</h2>
 
 <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-3 sm:gap-y-4 md:gap-x-8">
-	{
-		clients.map((client) => (
-			<li class="place-logo h-8 sm:h-12 relative opacity-80 hover:opacity-100 transition-opacity">
-				<Image
-					src={client.lightIcon}
-					alt={client.name}
-					class="h-8 sm:h-12 w-auto dark:opacity-0"
-				/>
-				<Image
-					src={client.darkIcon}
-					alt={client.name}
-					class="h-8 sm:h-12 w-auto opacity-0 dark:opacity-100 absolute inset-0"
-				/>
-			</li>
-		))
-	}
+  {
+    clients.map((client) => (
+      <li class="place-logo h-8 sm:h-12 relative opacity-80 hover:opacity-100 transition-opacity">
+        <Image
+          src={client.lightIcon}
+          alt={client.name}
+          class="h-8 sm:h-12 w-auto dark:opacity-0"
+        />
+        <Image
+          src={client.darkIcon}
+          alt={client.name}
+          class="h-8 sm:h-12 w-auto opacity-0 dark:opacity-100 absolute inset-0"
+        />
+      </li>
+    ))
+  }
 </ul>

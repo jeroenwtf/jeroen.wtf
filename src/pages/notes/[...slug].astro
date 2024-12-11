@@ -6,13 +6,13 @@ import Clarification from "../../components/Clarification.astro";
 import { getTitleFromFile } from "../../helpers/notes";
 
 export async function getStaticPaths() {
-	const notes = await getCollection("notes");
+  const notes = await getCollection("notes");
 
-	return notes.map((note) => ({
-		params: {
-			slug: note.slug,
-		},
-	}));
+  return notes.map((note) => ({
+    params: {
+      slug: note.slug,
+    },
+  }));
 }
 
 const notes = await getCollection("notes");
@@ -21,33 +21,35 @@ const note = notes.find((entry) => entry.slug === slug);
 
 if (!note) throw new Error(`Note not found: ${Astro.params.slug}`);
 
-const noteTitle = getTitleFromFile(note.id)
+const noteTitle = getTitleFromFile(note.id);
 const statusExplanation =
-	note.data.status === "draft"
-		? "I'm still working on it"
-		: "This note is sort of complete for now";
+  note.data.status === "draft"
+    ? "I'm still working on it"
+    : "This note is sort of complete for now";
 const { Content } = await note.render();
 ---
 
 <Layout title={noteTitle}>
-	<article>
-		<header class="flex flex-col gap-4 mb-10 sm:mb-16">
-			<div class="text-gray-500 dark:text-gray-400">{note.id}</div>
-			<h1 class="font-display font-semibold text-3xl sm:text-4xl leading-snug">{noteTitle}</h1>
+  <article>
+    <header class="flex flex-col gap-4 mb-10 sm:mb-16">
+      <div class="text-gray-500 dark:text-gray-400">{note.id}</div>
+      <h1 class="font-display font-semibold text-3xl sm:text-4xl leading-snug">
+        {noteTitle}
+      </h1>
 
-			<div
-				class="flex flex-wrap gap-x-6 border-t border-gray-300 dark:border-gray-700 mt-6 pt-4 text-gray-500 dark:text-gray-400"
-			>
-				<p>Last update: {note.data.modified.toISOString().split('T')[0]}</p>
-				<p>
-					Status:
-					<Clarification text={statusExplanation}
-						>{note.data.status}</Clarification
-					>
-				</p>
-			</div>
-		</header>
+      <div
+        class="flex flex-wrap gap-x-6 border-t border-gray-300 dark:border-gray-700 mt-6 pt-4 text-gray-500 dark:text-gray-400"
+      >
+        <p>Last update: {note.data.modified.toISOString().split("T")[0]}</p>
+        <p>
+          Status:
+          <Clarification text={statusExplanation}
+            >{note.data.status}</Clarification
+          >
+        </p>
+      </div>
+    </header>
 
-		<Prose type="note"><Content /></Prose>
-	</article>
+    <Prose type="note"><Content /></Prose>
+  </article>
 </Layout>
