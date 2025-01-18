@@ -4,12 +4,13 @@ import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 import wikiLinkPlugin from "remark-wiki-link";
 import { getNotesPermalinks, slugify } from "./src/helpers/notes";
+import besomwebcrafthealthcheck from "@besomwebcraft/astro-healthcheck";
 
 // TODO: This is being applied in all collections, check about it
 
 export default defineConfig({
   site: "https://jeroen.wtf",
-  integrations: [tailwind(), icon(), robotsTxt()],
+  integrations: [tailwind(), icon(), robotsTxt(), besomwebcrafthealthcheck()],
   output: "static",
   markdown: {
     remarkPlugins: [
@@ -29,3 +30,4 @@ export default defineConfig({
     ],
   },
 });
+

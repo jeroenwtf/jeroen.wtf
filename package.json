@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.2",
+    "@besomwebcraft/astro-healthcheck": "^1.0.0",
     "@fontsource-variable/jetbrains-mono": "^5.1.1",
     "@fontsource/merriweather": "^5.1.0",
     "@tailwindcss/typography": "^0.5.15",
