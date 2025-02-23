@@ -1,0 +1,54 @@
+---
+layout: ../layouts/Page.astro
+date: "2025-02-23"
+title: "Uses"
+---
+
+## Domains and hosting
+
+To buy domains I like the weirdos of Porkbun and for hosting I use Netlify or Hetzner.
+
+
+## Hardware
+
+Aside from tons of RPIs and some homelabs, my daily driver is a Framework Laptop 16. I'm pretty happy about it and the idea of being able to repair and upgrade it myself is great.
+
+My keyboard is a Lily58 with a custom keymap on ZMK. I used mechanical keyboards for a decade and boy do I like to build and use them.
+
+I ditched the common mouse and got a ELECOM HUGE trackball and remapped half of the buttons. Now I can scroll with ludicrous speed.
+
+To test and play with NFC and other nice things I use a Flipper Zero.
+
+I play video games with a Steam Deck. I swapped the original 64 GB SSD for a 512 GB one and the shell for a semi-transparent one and it looks dope. I honestly think is the best piece of gaming hardware I ever bought.
+
+Lastly, to stay alive I as type 1 diabetic I use Freestyle Libre 2+ CGM sensors and a pixel display I build connected to my Nightscout instance.
+
+
+## Software
+
+I do most of my work in the terminal. You can check my dotfiles for my setup.
+
+- **OS:** Arch Linux and GNOME.
+- **Terminal:** Wezterm with fish shell.
+- **Code editor:** Neovim.
+- **Browser:** Firefox Developer Edition.
+- **Git:** Lazygit, but I also like to use the command line.
+- For note-taking and writing and organise thoughts I use Obsidian.
+- Posting for testing and working with APIs.
+- Todoist for task management. Love it.
+- Other nice things I use daily: bat, eza, z, lazydocker, restic, age.
+
+For storing my git repos I use mostly GitHub and to automate workflows I use a self-hosted n8n.
+
+Remember to pay open source maintainers for their work. It's the right thing to do.
+
+
+## Design
+
+- I was a heavy Photoshop user long time ago. Nowadays I either use Figma or just code directly.
+
+
+## Security
+
+Yeah, I'm not telling you.
+
