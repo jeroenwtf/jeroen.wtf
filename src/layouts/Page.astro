@@ -1,0 +1,22 @@
+---
+import BaseLayout from "./Layout.astro";
+import MainTitle from "../components/MainTitle.astro";
+import Prose from "../components/Prose.astro";
+
+const { frontmatter } = Astro.props;
+const { title, date, location } = frontmatter;
+
+let subtitle = date && `Updated on ${date}`;
+
+if (location) {
+  subtitle = date ? `${subtitle} from ${location}` : `From ${location}`;
+}
+---
+
+<BaseLayout title={title}>
+  <MainTitle subtitle={subtitle}>{title}</MainTitle>
+
+  <Prose>
+    <slot />
+  </Prose>
+</BaseLayout>

@@ -1,22 +1,27 @@
 ---
 import Clarification from "../components/Clarification.astro";
+import Sections from "../components/Sections.astro";
 import buildInfo from "../build-info.json";
 
 const deployDate = new Date(buildInfo.deployTime).toLocaleString();
 const deployInfo = `On ${deployDate} - ${buildInfo.commitMessage}`;
 ---
 
-<footer
-  class="flex flex-col sm:flex-row justify-between mt-20 text-gray-500 dark:text-gray-400"
->
-  <p>
-    Handmade with <span class="text-red-600 dark:text-red-500">{"<3"}</span>
-    and <a href="https://astro.build/">Astro</a>
-  </p>
+<footer class="mt-20 text-gray-500 dark:text-gray-400">
+  <Sections />
 
-  <p>
-    Last deploy: <Clarification text={deployInfo}
-      >{buildInfo.commitHash}</Clarification
-    >
-  </p>
+  <hr class="my-6 sm:my-10 dark:border-gray-700" />
+
+  <div class="flex flex-col sm:flex-row justify-between">
+    <p>
+      Handmade with <span class="text-red-600 dark:text-red-500">{"<3"}</span>
+      and <a href="https://astro.build/">Astro</a>
+    </p>
+
+    <p>
+      Last deploy: <Clarification text={deployInfo}
+        >{buildInfo.commitHash}</Clarification
+      >
+    </p>
+  </div>
 </footer>

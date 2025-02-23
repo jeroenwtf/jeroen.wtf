@@ -12,6 +12,7 @@ export default defineConfig({
   site: "https://jeroen.wtf",
   integrations: [tailwind(), icon(), robotsTxt(), besomwebcrafthealthcheck()],
   output: "static",
+  trailingSlash: "never",
   markdown: {
     remarkPlugins: [
       [
@@ -30,4 +31,3 @@ export default defineConfig({
     ],
   },
 });
-
