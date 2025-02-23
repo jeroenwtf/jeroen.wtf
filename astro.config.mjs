@@ -6,6 +6,8 @@ import wikiLinkPlugin from "remark-wiki-link";
 import { getNotesPermalinks, slugify } from "./src/helpers/notes";
 import besomwebcrafthealthcheck from "@besomwebcraft/astro-healthcheck";
 
+import netlify from "@astrojs/netlify";
+
 // TODO: This is being applied in all collections, check about it
 
 export default defineConfig({
@@ -13,6 +15,7 @@ export default defineConfig({
   integrations: [tailwind(), icon(), robotsTxt(), besomwebcrafthealthcheck()],
   output: "static",
   trailingSlash: "never",
+
   markdown: {
     remarkPlugins: [
       [
@@ -30,4 +33,6 @@ export default defineConfig({
       ],
     ],
   },
+
+  adapter: netlify(),
 });

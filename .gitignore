@@ -3,6 +3,7 @@ update-notes.js
 # build output
 build-info.json
 dist/
+.netlify/
 
 # generated types
 .astro/
