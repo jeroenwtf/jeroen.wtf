@@ -15,6 +15,9 @@ export default defineConfig({
   integrations: [tailwind(), icon(), robotsTxt(), besomwebcrafthealthcheck()],
   output: "static",
   trailingSlash: "never",
+  build: {
+    format: "file",
+  },
 
   markdown: {
     remarkPlugins: [
@@ -36,3 +39,4 @@ export default defineConfig({
 
   adapter: netlify(),
 });
+
