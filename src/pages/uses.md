@@ -28,7 +28,7 @@ Lastly, to stay alive I as type 1 diabetic I use [Freestyle Libre 2+](https://ww
 
 I do most of my work in the terminal. You can check [my dotfiles](https://github.com/jeroenwtf/dotfiles) for my setup.
 
-- **OS:** [Arch Linux](https://archlinux.org/) and [GNOME](https://www.gnome.org/).
+- **OS:** [Arch Linux](https://archlinux.org/) and GNOME.
 - **Terminal:** [Wezterm](https://wezfurlong.org/wezterm/) with [fish shell](https://fishshell.com/) and [starship](https://starship.rs/).
 - **Code editor:** [Neovim](https://neovim.io/).
 - **Browser:** [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/).
@@ -38,14 +38,28 @@ I do most of my work in the terminal. You can check [my dotfiles](https://github
 - [Todoist](https://todoist.com/) for task management. Love it.
 - Other nice things I use daily: [mise](https://mise.jdx.dev/), [bat](https://github.com/sharkdp/bat), [eza](https://github.com/eza-community/eza), [z](https://github.com/jethrokuan/z), [lazydocker](https://github.com/jesseduffield/lazydocker), [restic](https://restic.net/), [age](https://github.com/FiloSottile/age), [just](https://github.com/casey/just).
 
-For storing my git repos I use mostly [GitHub](https://github.com/) and to automate workflows I use a self-hosted [n8n](https://n8n.io/).
+For storing my git repos I use mostly GitHub and to automate workflows I use a self-hosted [n8n](https://n8n.io/).
 
 Remember to pay open source maintainers for their work. It's the right thing to do.
 
 
+## Code
+
+This site is made with [Astro](https://astro.build/), but for most of my projects I like to use Ruby on Rails. Long time ago I was a CodeIgniter fan and in the recent years I geared back towards MVC frameworks and couldn't be happier. That includes the whole circus: View Components and [Hotwire](https://hotwired.dev/) (even tho I really want to work with [Inertia.js](https://inertiajs.com/)).
+
+I like [TailwindCSS](https://tailwindcss.com/) to move fast but to keep the look and feel consistent. It's tricky but doable.
+
+
 ## Design
 
-- I was a heavy [Photoshop](https://www.adobe.com/products/photoshop.html) user long time ago. Nowadays I either use [Figma](https://www.figma.com/) or just code directly.
+I was a heavy Adobe Photoshop user long, long time ago. Nowadays I either use [Figma](https://www.figma.com/) or just code directly.
+
+
+## AI
+
+I don't like to use generative AI. Everything I write, any communication, personal or at work, is done by hand. I use ChatGPT for general questions and guidance, even tho it can really hallucinate, and I hooked Claude to Neovim to do some tedious work.
+
+But here's the thing: every single line of code I will review and, if needed, will do some research to make sure it's correct. Otherwise it's going to be a mess.
 
 
 ## Security
