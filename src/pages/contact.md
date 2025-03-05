@@ -12,7 +12,7 @@ You can [send me an email](mailto:hola@jeroen.wtf) or find me in other places of
 - [LinkedIn](https://www.linkedin.com/in/jeroenwtf/)
 - [GitHub](https://github.com/jeroenwtf/)
 - [Mastodon](https://mastodon.social/@jeroenwtf/)
-- [Instagram](https://mastodon.social/@jeroenwtf/)
+- [Instagram](https://instagram.com/jeroenwtf/)
 
 
 ### Others
