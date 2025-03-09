@@ -36,7 +36,7 @@ I do most of my work in the terminal. You can check [my dotfiles](https://github
 - For note-taking and writing and organise thoughts I use [Obsidian](https://obsidian.md/).
 - [posting](https://github.com/darrenburns/posting) for testing and working with APIs.
 - [Todoist](https://todoist.com/) for task management. Love it.
-- Other nice things I use daily: [mise](https://mise.jdx.dev/), [bat](https://github.com/sharkdp/bat), [eza](https://github.com/eza-community/eza), [z](https://github.com/jethrokuan/z), [lazydocker](https://github.com/jesseduffield/lazydocker), [restic](https://restic.net/), [age](https://github.com/FiloSottile/age), [just](https://github.com/casey/just).
+- Other nice things I use daily: [mise](https://mise.jdx.dev/), [ni](https://github.com/antfu/ni), [bat](https://github.com/sharkdp/bat), [eza](https://github.com/eza-community/eza), [z](https://github.com/jethrokuan/z), [lazydocker](https://github.com/jesseduffield/lazydocker), [restic](https://restic.net/), [age](https://github.com/FiloSottile/age), [just](https://github.com/casey/just).
 
 For storing my git repos I use mostly GitHub and to automate workflows I use a self-hosted [n8n](https://n8n.io/).
 
